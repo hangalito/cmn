@@ -1,4 +1,4 @@
-package com.bracketcove.sckul.ui.theme
+package com.cmn.ui.theme
 
 import android.app.Activity
 import android.os.Build

@@ -1,4 +1,4 @@
-package com.bracketcove.sckul.data
+package com.cmn.data
 
 
 /** Data class representing the ui state of the app.

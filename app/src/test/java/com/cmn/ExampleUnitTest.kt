@@ -1,4 +1,4 @@
-package com.bracketcove.sckul
+package com.cmn
 
 import org.junit.Test
 

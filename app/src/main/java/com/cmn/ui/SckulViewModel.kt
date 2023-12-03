@@ -1,7 +1,7 @@
-package com.bracketcove.sckul.ui
+package com.cmn.ui
 
 import androidx.lifecycle.ViewModel
-import com.bracketcove.sckul.data.SckulUiState
+import com.cmn.data.SckulUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

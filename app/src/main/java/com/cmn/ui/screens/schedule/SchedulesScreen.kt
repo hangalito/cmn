@@ -1,5 +1,6 @@
-package com.bracketcove.sckul.ui
+package com.cmn.ui.screens.schedule
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,20 +15,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.bracketcove.sckul.R
-import com.bracketcove.sckul.data.SckulUiState
+import com.cmn.R
+import com.cmn.data.SckulUiState
+import com.cmn.ui.SckulViewModel
 
 @Composable
-fun HomeScreen(
+fun ScheduleScreen(
+    viewModel: SckulViewModel,
     uiState: State<SckulUiState>,
     modifier: Modifier = Modifier
 ) {
-    AnimatedVisibility(visible = uiState.value.isShowingHome) {
+    BackHandler {
+        viewModel.navigateHome()
+    }
+
+    AnimatedVisibility(visible = uiState.value.isShowingSchedule) {
         Column(
             modifier = modifier.fillMaxSize()
         ) {
             Text(
-                stringResource(R.string.home),
+                stringResource(R.string.schedule),
                 style = MaterialTheme.typography.headlineLarge,
                 modifier = Modifier
                     .fillMaxSize()
@@ -41,7 +48,8 @@ fun HomeScreen(
 
 @Composable
 @Preview(showBackground = true, device = "id:pixel_7_pro")
-fun HomeScreenPreview() {
+fun ScheduleScreenPreview() {
     val viewModel: SckulViewModel = viewModel()
-    HomeScreen(viewModel.uiState.collectAsState())
+    val uiState = viewModel.uiState.collectAsState()
+    ScheduleScreen(viewModel, uiState)
 }

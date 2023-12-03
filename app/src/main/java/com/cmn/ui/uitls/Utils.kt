@@ -1,8 +1,8 @@
-package com.bracketcove.sckul.ui.uitls
+package com.cmn.ui.uitls
 
 import androidx.compose.runtime.State
 import com.bracketcove.sckul.R
-import com.bracketcove.sckul.data.SckulUiState
+import com.cmn.data.SckulUiState
 
 fun getScreenName(uiState: State<SckulUiState>): Int {
     return  when {

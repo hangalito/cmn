@@ -1,4 +1,4 @@
-package com.bracketcove.sckul
+package com.cmn
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -42,16 +42,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.bracketcove.sckul.data.SckulUiState
-import com.bracketcove.sckul.ui.ChatScreen
-import com.bracketcove.sckul.ui.HomeScreen
-import com.bracketcove.sckul.ui.ScheduleScreen
-import com.bracketcove.sckul.ui.SckulViewModel
-import com.bracketcove.sckul.ui.uitls.getScreenName
+import com.cmn.ui.SckulViewModel
+import com.cmn.data.SckulUiState
+import com.cmn.ui.screens.chat.ChatScreen
+import com.cmn.ui.screens.home.HomeScreen
+import com.cmn.ui.screens.schedule.ScheduleScreen
+import com.cmn.ui.uitls.getScreenName
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SckulApp(viewModel: SckulViewModel = viewModel()) {
+fun CmnApp(viewModel: SckulViewModel = viewModel()) {
     val uiState = viewModel.uiState.collectAsState()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     var isOpen by remember { mutableStateOf(false) }
@@ -241,5 +241,5 @@ private fun NewChat(
 fun SckulAppPreview() {
     /*val viewModel: SckulViewModel = viewModel()
     val uiState = viewModel.uiState.collectAsState()*/
-    SckulApp()
+    CmnApp()
 }

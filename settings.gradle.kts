@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Sckul"
+rootProject.name = "CMN"
 include(":app")

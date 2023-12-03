@@ -1,11 +1,11 @@
-package com.bracketcove.sckul.ui
+package com.cmn.ui.screens.chat
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -15,11 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.bracketcove.sckul.R
-import com.bracketcove.sckul.data.SckulUiState
+import com.cmn.R
+import com.cmn.data.SckulUiState
+import com.cmn.ui.SckulViewModel
 
 @Composable
-fun ScheduleScreen(
+fun ChatScreen(
     viewModel: SckulViewModel,
     uiState: State<SckulUiState>,
     modifier: Modifier = Modifier
@@ -27,14 +28,13 @@ fun ScheduleScreen(
     BackHandler {
         viewModel.navigateHome()
     }
-
-    AnimatedVisibility(visible = uiState.value.isShowingSchedule) {
+    AnimatedVisibility(visible = uiState.value.isShowingChat) {
         Column(
             modifier = modifier.fillMaxSize()
         ) {
             Text(
-                stringResource(R.string.schedule),
-                style = MaterialTheme.typography.headlineLarge,
+                stringResource(R.string.chat),
+                style = typography.headlineLarge,
                 modifier = Modifier
                     .fillMaxSize()
                     .wrapContentSize(
@@ -47,8 +47,8 @@ fun ScheduleScreen(
 
 @Composable
 @Preview(showBackground = true, device = "id:pixel_7_pro")
-fun ScheduleScreenPreview() {
+fun ChatScreenPreview() {
     val viewModel: SckulViewModel = viewModel()
     val uiState = viewModel.uiState.collectAsState()
-    ScheduleScreen(viewModel, uiState)
+    ChatScreen(viewModel, uiState)
 }

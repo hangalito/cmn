@@ -1,4 +1,4 @@
-package com.bracketcove.sckul.ui.theme
+package com.cmn.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.bracketcove.sckul"
+    namespace = "com.cmn"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.bracketcove.sckul"
+        applicationId = "com.cmn"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
